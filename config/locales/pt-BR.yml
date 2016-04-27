@@ -1,0 +1,57 @@
+pt-BR:
+  #menu
+  mc_tasksmgmt_menu_label: "Gerenciamento de Tarefas"
+  mc_timemgmt_menu_label: "Gerenciamento de Tempo" 
+  mc_humanresourcemgmt_menu_label: "Gerenciamento de Recursos Humanos" 
+ 
+  #permissions
+  permission_view_home_monitoring_controlling: "Visualizar M&C Gerenciamento de Tarefas"
+  permission_view_mc_time_mgmt_project: "Visualizar M&C Gerenciamento de Tempo"  
+  permission_view_mc_human_resource_mgmt_project: "Visualizar M&C Gerenciamento de Recursos Humanos"
+  
+  monitoring_controlling_title: "Monitoramento & Controle"
+  project_module_monitoring_controlling_project: "Monitoramento & Controle por Projeto"
+  monitoring_controlling_project: "Monitoramento & Controle por Projeto"
+  statuses_issue_label_title: "Situação das tarefas"
+  categories_issue_label_title: "Tarefas por Tipo"
+
+  task_management_label_title: "Gerenciamento das Tarefas"
+  task_manageable_chart_title: "Tarefas Gerenciáveis"
+  task_manageable_chart_overdue_title: "Tarefas Atrasadas"
+  
+  manageable_label: "Gerenciável"
+  unmanageable_label: "Não Gerenciável"
+  manageable_text_tip: "Tarefas com data de entrega."
+  unmanageable_text_tip: "Tarefas sem data de entrega preenchida"
+  
+  tasks_label: "tarefa(s)"
+  tasksof_label: "tarefa(s) de"    
+  
+  overdue_label: "Atrasada"
+  overdue_text: "atrasada(s)"
+  delivered_label: "Entregue"
+  tobedelivered_label: "A ser entregue"
+  days_late_text: "dia(s) atrasada(s)"
+  
+  close_label: "fechar"
+  
+  # formatos de data e hora
+  default_date_format: "%d/%m/%Y"
+  
+  # time management screen
+  time_mgmt_label_title: "Horas Planejada por Horas Executadas"
+  time_mgmt_areaspline_yaxis_label: "Tempo (horas)"
+  time_mgmt_estimated_label: "Planejado"
+  time_mgmt_spent_label: "Executado"
+  time_mgmt_hours_label: "hora(s)"
+  time_mgmt_error_no_issues_found_text: "Nenhuma tarefa foi encontrada."
+  time_mgmt_error_no_issues_duedate_found_text: "Nenhuma tarefa com data de entrega preenchida foi encontrada."
+  time_mgmt_version_label_title: "Versões por Horas"
+  
+  # human resource management
+  hr_mgmt_label_title: "Gerenciamento de Pessoas"
+  hr_unassigned_issue_label: "Não atribuída"
+  hr_columnbar_title_label: "Tarefas por responsáveis"
+  hr_columnbar_yaxis_label: "Quantidade de Tarefas"
+  hr_stackedcolumnbar_title_label: "Responsáveis e suas respectivas tarefas por situação"
+  hr_stackedcolumnbar_yaxis_label: "Quantidade de tarefas"

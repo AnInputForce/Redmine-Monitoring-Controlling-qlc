@@ -1,0 +1,58 @@
+zh:
+   #menu
+   mc_tasksmgmt_menu_label: "任务管理"
+   mc_timemgmt_menu_label: "时间管理"
+   mc_humanresourcemgmt_menu_label: "HR管理"     
+
+   #permissions
+   permission_view_home_monitoring_controlling: "查看M&C任务管理"
+   permission_view_mc_time_mgmt_project: "查看M&C时间管理"
+   permission_view_mc_human_resource_mgmt_project: "查看M&C HR管理"  
+    
+   monitoring_controlling_title: "项目监控"
+   project_module_monitoring_controlling_project: "项目监控"
+   monitoring_controlling_project: "项目监控"
+   statuses_issue_label_title: "任务情况（按状态）"
+   categories_issue_label_title: "Tasks by Category"   
+
+   task_management_label_title: "任务管理"
+   task_manageable_chart_title: "可控任务分布图"
+   task_manageable_chart_overdue_title: "逾期任务分布图"
+
+   manageable_label: "已定义计划完成时间任务"
+   unmanageable_label: "未定义计划完成时间任务"
+   manageable_text_tip: "当前项目中所有已定义计划完成日期的任务。"
+   unmanageable_text_tip: "当前项目中所有未定义计划完成日期的任务。"
+
+   tasks_label: "任务"
+   tasksof_label: " 任务 /"    
+
+   overdue_label: "逾期"
+   overdue_text: "逾期"        
+   delivered_label: "已交付"
+   tobedelivered_label: "即将交付"
+   days_late_text: "日延迟"    
+
+   close_label: "关闭"
+
+   # date format
+   default_date_format: "%Y/%m/%d"   
+  
+   # time management screen
+   time_mgmt_label_title: "计划时间和已用时间"
+   time_mgmt_areaspline_yaxis_label: "时间（小时）"
+   time_mgmt_estimated_label: "预估"
+   time_mgmt_spent_label: "已用"
+   time_mgmt_hours_label: "工时"   
+   time_mgmt_error_no_issues_found_text: "No issues were found."
+   time_mgmt_error_no_issues_duedate_found_text: "未找到定义计划完成时间的问题。"   
+   time_mgmt_version_label_title: "按工时查看版本"   
+
+   # human resource management
+   hr_mgmt_label_title: "HR管理"
+   hr_unassigned_issue_label: "未分配"
+   hr_columnbar_title_label: "按处理人统计问题数量"
+   hr_columnbar_yaxis_label: "问题数"
+   hr_stackedcolumnbar_title_label: "按处理人分状态统计问题数量（堆积图）"
+   hr_stackedcolumnbar_yaxis_label: "问题数"
+   
