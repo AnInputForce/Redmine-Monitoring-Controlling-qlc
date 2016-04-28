@@ -47,17 +47,35 @@ class HomeMonitoringControllingProjectController < ApplicationController
 
 
     #get statuses by main project and subprojects
+
+    #modify for our filters by kangcunhua @2014.04.28 :begin
+    # define my var
+    tmpsql = ""
+    if !params[:tag_tracker].nil?
+      tag_tracker_ids = "(" + params[:tag_tracker].join(",")  + ")"
+      tmpsql = tmpsql + " and tracker_id in " + tag_tracker_ids + " "
+    end
+    if !params[:tag_issue_status].nil?
+      #tag_issue_statuses = "(" + params[:tag_issue_status].join(",")  + ")"
+      #tmpsql = tmpsql + " and tracker_id in " + tag_issue_statuses + " "
+    end
+    
     if @totalIssues > 0 
       @statuses = IssueStatus.find_by_sql("SELECT *,
-                                            ((SELECT COUNT(1) FROM issues where project_id in (#{stringSqlProjectsSubProjects}) and status_id = issue_statuses.id)
+                                            ((SELECT COUNT(1) FROM issues where project_id in (#{stringSqlProjectsSubProjects}) and status_id = issue_statuses.id " + tmpsql + ")
                                             /
                                             #{@totalIssues})*100 as percent,
-                                            (SELECT COUNT(1) FROM issues where project_id in (#{stringSqlProjectsSubProjects}) and status_id = issue_statuses.id)
+                                            (SELECT COUNT(1) FROM issues where project_id in (#{stringSqlProjectsSubProjects}) and status_id = issue_statuses.id " + tmpsql + ")
                                             AS totalissues
                                             FROM issue_statuses;")
+
+    
+    #modify for our filters by kangcunhua @2014.04.28 :end
     else
       @statuses = nil
-    end                                          
+    end
+
+
 
     #get management issues by main project
     @managementissues = Issue.find_by_sql("select 1 as id, '#{t :manageable_label}' as typemanagement, count(1) as totalissues

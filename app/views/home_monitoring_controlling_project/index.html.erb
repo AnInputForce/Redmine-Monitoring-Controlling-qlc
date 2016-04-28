@@ -7,6 +7,29 @@
 
 <%= render :partial => '/mc_menu/mcmenu' %>
 
+<!-- add filters ele start -->
+<%= form_tag '#', :method => :get, :id => 'filter_form' do %>
+
+	<%= hidden_field_tag :filter_form_action, "", :id => "filter_form_action" %>  
+	<div id="query_form_content">
+
+		<fieldset id="filters" class="collapsible">
+			<legend onclick="toggleFieldset(this);"><%= l(:label_filter_plural) %></legend>
+			<div>
+				<%= render :partial => 'filters' %>
+			</div>
+			<p class="buttons">
+			<%= submit_tag l(:button_apply), :class => 'button-small', :onclick => "$('filter_form_action').value = ''; $('page') = '1'; $('filter_form').submit(); return false;" %>
+			<%= link_to l(:button_clear), {}, :class => 'icon icon-reload' %>    
+		</p> 
+		</fieldset>
+
+		
+	</div> 
+	<% end %>
+<% end %>
+<!-- add filters ele end -->
+
 <div class="central_charts">
    <% if @totalIssues > 0  %>
 	 <h2><%=t :statuses_issue_label_title %> - <%=  @all_project_issues.count %> <%=t :tasks_label%>, <%= @overdueissues.count %> <%=t :overdue_text%></h2>
