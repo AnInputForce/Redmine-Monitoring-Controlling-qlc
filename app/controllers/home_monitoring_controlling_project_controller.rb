@@ -22,6 +22,7 @@ class HomeMonitoringControllingProjectController < ApplicationController
     @totalIssues = Issue.where(:project_id => [stringSqlProjectsSubProjects]).count
     
     #get count of issues by category
+    @totaltrackers = Tracker.find_by_sql("select * from trackers;")
     @issuesbycategory = IssueStatus.find_by_sql(["select trackers.name, trackers.position, count(*) as totalbycategory,
                                                 (select count(*) 
                                                  from issues 
@@ -46,6 +47,8 @@ class HomeMonitoringControllingProjectController < ApplicationController
                                                 order by 2;", true, false])
 
 
+
+
     #get statuses by main project and subprojects
 
     #modify for our filters by kangcunhua @2014.04.28 :begin
@@ -56,22 +59,24 @@ class HomeMonitoringControllingProjectController < ApplicationController
       tmpsql = tmpsql + " and tracker_id in " + tag_tracker_ids + " "
     end
     if !params[:tag_issue_status].nil?
-      #tag_issue_statuses = "(" + params[:tag_issue_status].join(",")  + ")"
-      #tmpsql = tmpsql + " and tracker_id in " + tag_issue_statuses + " "
+      tag_issue_statuses_ids = "(" + params[:tag_issue_status].join(",")  + ")"
+      tmpsql = tmpsql + " and status_id in " + tag_issue_statuses_ids + " "
     end
     
     if @totalIssues > 0 
+      @totalstatuses = IssueStatus.find_by_sql("SELECT * FROM issue_statuses;")
       @statuses = IssueStatus.find_by_sql("SELECT *,
                                             ((SELECT COUNT(1) FROM issues where project_id in (#{stringSqlProjectsSubProjects}) and status_id = issue_statuses.id " + tmpsql + ")
                                             /
                                             #{@totalIssues})*100 as percent,
                                             (SELECT COUNT(1) FROM issues where project_id in (#{stringSqlProjectsSubProjects}) and status_id = issue_statuses.id " + tmpsql + ")
                                             AS totalissues
-                                            FROM issue_statuses;")
+                                            FROM issue_statuses where id in ( SELECT status_id FROM issues where project_id in (#{stringSqlProjectsSubProjects}) " + tmpsql + ");")
 
-    
-    #modify for our filters by kangcunhua @2014.04.28 :end
+
+      #modify for our filters by kangcunhua @2014.04.28 :end
     else
+      @totalstatuses = nil
       @statuses = nil
     end
 

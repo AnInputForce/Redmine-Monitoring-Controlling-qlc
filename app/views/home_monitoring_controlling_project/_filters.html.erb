@@ -40,8 +40,8 @@ function toggle_filter(field) {
 <table width="100%"><tr>
   <td width="10%"><%= check_box_tag 'field_tracker', '1' , checked = false, :id => "cb_field_tracker"  %>
     <label for="tracker"><%= l(:field_tracker) %></label>: 
-  </td><td width="25%"><%= select_tag 'tag_tracker[]', options_from_collection_for_select(@issuesbycategory, 'position','name'), {:multiple => true, :class => "select-small", :id => "values_field_tracker", :style => "width:120px"} %>
+  </td><td width="25%"><%= select_tag 'tag_tracker[]', options_from_collection_for_select(@totaltrackers, 'position','name'), {:multiple => true, :class => "select-small", :id => "values_field_tracker", :style => "width:120px"} %>
   </td><td width="10%"><%= check_box_tag 'field_status', '1' , checked = false, :id => "cb_filed_status" %>
      <label for="issue_status"><%= l(:field_status) %></label>: 
-  </td><td width="25%"><%= select_tag 'tag_issue_status[]', options_for_select(@statuses, @statuses[1]), {:multiple => true, :class => "select-small", :id => "values_field_status", :style => "width:120px"} %></td>
+  </td><td width="25%"><%= select_tag 'tag_issue_status[]', options_from_collection_for_select(@totalstatuses, 'position','name'), {:multiple => true, :class => "select-small", :id => "values_field_status", :style => "width:120px"} %></td>
 </tr></table>
