@@ -37,3 +37,7 @@ calendars_controller.rb中引用Calendar类；
           <%= render :partial => 'queries/filters', :locals => {:query => @query} %>
         </div>
       </fieldset>
+Git命令：
+$ git checkout calendar//切换到calendar分支
+$ git pull origin calender//获取calendar repo
+$ git push origin calender//提交calendar repo
