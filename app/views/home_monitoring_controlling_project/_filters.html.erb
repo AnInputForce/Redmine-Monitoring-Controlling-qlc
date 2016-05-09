@@ -44,4 +44,7 @@ function toggle_filter(field) {
   </td><td width="10%"><%= check_box_tag 'field_status', '1' , checked = false, :id => "cb_filed_status" %>
      <label for="issue_status"><%= l(:field_status) %></label>: 
   </td><td width="25%"><%= select_tag 'tag_issue_status[]', options_from_collection_for_select(@totalstatuses, 'position','name'), {:multiple => true, :class => "select-small", :id => "values_field_status", :style => "width:120px"} %></td>
+  <td width="10%"><%= check_box_tag 'field_due_date', '1' , checked = false, :id => "cb_field_due_date"  %>
+    <label for="due_date"><%= l(:field_due_date) %></label>:
+    </td>
 </tr></table>

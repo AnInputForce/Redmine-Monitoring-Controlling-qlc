@@ -19,3 +19,21 @@ http://10.33.33.117:9988/home_monitoring_controlling_project/index/test1?utf8=%E
 #原始代码
 the plugin source is : 
 https://github.com/alexmonteiro/Redmine-Monitoring-Controlling
+
+#创建分支calendar
+项目组要求在过滤器中增加计划完成时间筛选功能，仿照Redmine中自带的功能效果（视图可查看Redmine中任务或者敏捷标签页的过滤器），去掉不需要的图表并调整视图；
+已提交修改内容：
+任务管理和时间管理的统计图，数据显示统计个数+百分比；
+HR管理模块显示用户全名；
+zh.yml文件中未定义的中文字段；
+home_monitoring_controlling_project/index.html.erb中调整图表位置；
+*Redmine中已有，可能会与过滤筛选相关的内容记录如下：
+queries_controller.rb中引用IssueQuery类；
+calendars_controller.rb中引用Calendar类；
+在agile_bords\_index.html.erb中看到有关query的代码段，渲染的部分是redmine\app\views\queries\_filters.html.erb
+<fieldset id="filters" class="collapsible <%= @query.new_record? ? "" : "collapsed" %>">
+        <legend onclick="toggleFieldset(this);"><%= l(:label_filter_plural) %></legend>
+        <div style="<%= @query.new_record? ? "" : "display: none;" %>">
+          <%= render :partial => 'queries/filters', :locals => {:query => @query} %>
+        </div>
+      </fieldset>

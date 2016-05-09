@@ -75,3 +75,7 @@ div.mini_chart_note {
     margin: 0 auto;
     float: left;
 }
+
+div.central_filters {
+    margin-top: 40px;
+}

@@ -93,10 +93,10 @@ $(document).ready(function() {
 					showInLegend: false,
 					dataLabels: {
 						enabled: true,
-						formatter: function() {
-                            return Highcharts.numberFormat(this.percentage,2) +' %';
-                        }
-					}
+						formatter: function() {									
+					return Highcharts.numberFormat(this.y,2) +' '+'<%=t :time_mgmt_hours_label%>'+'<br/>'+ Highcharts.numberFormat(this.percentage,2) +'  %';								}
+                            
+				         }
 					
 		}
 				

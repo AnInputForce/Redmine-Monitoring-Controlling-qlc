@@ -13,7 +13,7 @@ zh:
    project_module_monitoring_controlling_project: "项目监控"
    monitoring_controlling_project: "项目监控"
    statuses_issue_label_title: "任务情况（按状态）"
-   categories_issue_label_title: "Tasks by Category"   
+   categories_issue_label_title: "任务类别(按跟踪）"   
 
    task_management_label_title: "任务管理"
    task_manageable_chart_title: "可控任务分布图"
@@ -44,7 +44,7 @@ zh:
    time_mgmt_estimated_label: "预估"
    time_mgmt_spent_label: "已用"
    time_mgmt_hours_label: "工时"   
-   time_mgmt_error_no_issues_found_text: "No issues were found."
+   time_mgmt_error_no_issues_found_text: "未找到问题。"
    time_mgmt_error_no_issues_duedate_found_text: "未找到定义计划完成时间的问题。"   
    time_mgmt_version_label_title: "按工时查看版本"   
 
@@ -56,3 +56,12 @@ zh:
    hr_stackedcolumnbar_title_label: "按处理人分状态统计问题数量（堆积图）"
    hr_stackedcolumnbar_yaxis_label: "问题数"
    
+   charts_condition_issue_ids: "Issue #"
+   charts_condition_user_ids: "User"
+   charts_condition_activity_ids: "Activity"
+   charts_condition_category_ids: "Category"  
+   charts_condition_project_ids: "Project"
+   charts_condition_author_ids: "Author"
+   charts_condition_status_ids: "Status"
+   charts_condition_assigned_to_ids: "Owner"
+   charts_condition_all: "---"

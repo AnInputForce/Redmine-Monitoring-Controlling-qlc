@@ -32,7 +32,7 @@ $(function () {
                         color: '#000000',
                         connectorColor: '#000000',
                         formatter: function() {
-                            return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage,2) +' %';
+                            return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.y,0) + ', ' + Highcharts.numberFormat(this.percentage,2) +' %';
                         }
                     }
                 }
@@ -182,6 +182,10 @@ $(function () {
             title: {
                 text: '<%=t :task_manageable_chart_overdue_title %>'
             },
+
+            subtitle: {
+                text: '(' + '<%=t :manageable_label%>' + ')'
+            },
             tooltip: {
                 formatter: function() {
                     return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.y,0)+ ' <%=t :tasksof_label%> '+<%= @managementissues.first.totalissues %>+' <%=t :manageable_label%>';
@@ -246,7 +250,7 @@ $(function () {
                         color: '#000000',
                         connectorColor: '#000000',
                         formatter: function() {
-                            return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage,2) +' %';
+                            return '<b>'+ this.point.name +'</b>: '+ Highcharts.numberFormat(this.y,0) + ', ' + Highcharts.numberFormat(this.percentage,2) +' %';
                         }
                     }
                 }
@@ -324,7 +328,21 @@ $(document).ready(function() {
      			      <%= cat.totalundone %>,
 			        <%end%>
 				  ]	,
-					color: '#AA4643'
+			color: '#AA4643',
+                        dataLabels: {
+                                                        enabled: true,
+                                                        rotation: -90,
+                                                        color: '#FFFFFF',
+                                                        align: 'right',
+                                                        x: -3,
+                                                        y: 10,
+                                                        formatter: function() {
+                                                                return this.y;
+                                                        },
+                                                        style: {
+                                                                font: 'normal 13px Verdana, sans-serif'
+                                                        }
+                                     }
 		    },
 				{
 				name: '<%=t :delivered_label%>',
@@ -333,7 +351,23 @@ $(document).ready(function() {
          			      <%= cat.totaldone %>,
 	       		       <%end%>				  
 				]	,
-					color: '#4572A7'
+				color: '#4572A7',
+                                dataLabels: {
+                                                        enabled: true,
+                                                        rotation: -90,
+                                                        color: '#FFFFFF',
+                                                        align: 'right',
+                                                        x: -3,
+                                                        y: 10,
+                                                        formatter: function() {
+                                                                return this.y;
+                                                        },
+                                                        style: {
+                                                                font: 'normal 13px Verdana, sans-serif'
+                                                        }
+                                     }
+
+                               
 			    }
 				
 		]
